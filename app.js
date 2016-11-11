@@ -53,11 +53,35 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
+// You may not use the arithmetic operators +, use sum(), and *, use multiply, in this function
 
+// [0] first element is the sum of those three numbers
+  var sumAB = sum(a, b); // function returns array [sum, string], need sumAB[0]
+
+  var totalSum = sum(sumAB[0], c); // function returns array [sum, string], need totalSum[0] for int sum, totalSum[1] for string
+  console.log('totalSum[0]: ', totalSum[0]);
+  console.log('totalSum[1]: ', totalSum[1]);
+
+// [1] second element is the product of those three numbers
+  var productAB = multiply(a, b); // function returns array [product, string], need productAB[0]
+
+  var totalProduct = multiply(productAB[0], c); // function returns array [product, string], need totalProduct[0] for int product, totalProduct[1] for string
+  console.log('totalProduct[0]: ', totalProduct[0]);
+  console.log('totalProduct[1]: ', totalProduct[1]);
+
+// [2] third element is "4 and 7 and 5 sum to 16." = a and b and c sum to totalSum.
+  console.log('third element: ', 'a + " and " + b + " and " + c + " sum to " + totalSum[0] + "."');
+// [3] fourth element is "The product of 4 and 7 and 5 is 140." = the product of a and b and c is totalProduct
+  console.log('fourth element: ', '"The product of " + a + " and " + b + " and" + c + " is " + totalProduct[0] + "."');
+
+// return array [0, 1, 2, 3]
+  console.log('look: ', totalSum[0], totalProduct[0], a + ' and ' + b + ' and ' + c + ' sum to ' + totalSum[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + totalProduct[0] + '.');
+
+  return [totalSum[0], totalProduct[0], a + ' and ' + b + ' and ' + c + ' sum to ' + totalSum[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + totalProduct[0] + '.'];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
