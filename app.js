@@ -131,10 +131,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  // the first element is the product of the numbers in the array,
+  // numbers = testArray[0]...testArray[2]
+  // product function returns array, value is stored at first element
+  var productIndex0Index1 = multiply(testArray[0], testArray[1]); //returns array, value is stored at first element
+  var productToArray = multiply(productIndex0Index1[0], testArray[2]); //returns array, value is stored at first element
+  console.log('productIndex0Index1 array: ', productIndex0Index1);
+  console.log('productToArray array:', productToArray);
+// the second element is a string = 'The numbers 2,3,4 have a product of 24.'
+  var returnIndex1Element =  'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + productToArray[0] + '.';
+  console.log('returnIndex1Element is: ', returnIndex1Element);
+// returns an array [product, string]
+  return [productToArray[0], returnIndex1Element];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
